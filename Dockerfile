@@ -1,8 +1,7 @@
-FROM python:3
+FROM python:3.7.3-stretch
 
-RUN pip3 install --user websockets
+RUN pip install websockets
 
-WORKDIR /opt/
-COPY . /opt/
+COPY . .
 
-CMD python -u ./simple-server.py
+CMD [ "python", "./simple-server.py" ]
